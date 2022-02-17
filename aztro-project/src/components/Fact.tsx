@@ -4,7 +4,7 @@ type FactProps = {
   image: string;
 };
 
-const Fact = ({ name, data, image }: FactProps): React.ReactElement => {
+const Fact = ({ name, data }: FactProps): React.ReactElement => {
   return (
     <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20 text-center">
       <div className="flex justify-center md:justify-end -mt-16">

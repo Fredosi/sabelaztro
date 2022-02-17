@@ -1,4 +1,4 @@
-import ZodiacSignSabela from "../components/ZodiacSignSabela.tsx";
+import ZodiacSign from "../components/ZodiacSign.tsx";
 
 const zodiacInfo = [
     { sign: "Aries", dates: "Mar 21 - Apr 19" },
@@ -20,7 +20,7 @@ const ZodiacSelector = ({setSign}) => {
     <div className="mx-auto container py-10 xl:px-40">
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 content-center place-items-center">
         {zodiacInfo.map((info, i) => (
-          <ZodiacSignSabela
+          <ZodiacSign
             key={i}
             name={info.sign}
             dates={info.dates}

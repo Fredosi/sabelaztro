@@ -9,7 +9,7 @@ type ZodiacSignProps = {
   dates: string;
 };
 
-const ZodiacSignSabela = (props: ZodiacSignProps): React.ReactElement => {
+const ZodiacSign = (props: ZodiacSignProps): React.ReactElement => {
   const { setSign } = useContext(ZodiacSignContext);
 
   const handleClick = () => {
@@ -34,4 +34,4 @@ const ZodiacSignSabela = (props: ZodiacSignProps): React.ReactElement => {
   );
 };
 
-export default ZodiacSignSabela;
+export default ZodiacSign;
