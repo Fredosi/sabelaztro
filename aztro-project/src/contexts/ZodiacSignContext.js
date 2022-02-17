@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import { getStore } from "../store";
 
 export const ZodiacSignContext = createContext({
     sign: '',
@@ -6,7 +7,7 @@ export const ZodiacSignContext = createContext({
 });
 
 const ZodiacSignProvider = ({ children }) => {
-  const [sign, setSign] = useState('');
+  const [sign, setSign] = useState(getStore() ? getStore() : '');
 
 
   return (
