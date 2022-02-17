@@ -3,7 +3,6 @@ import { useContext, useEffect } from "react";
 import { ZodiacInfoContext } from "../contexts/ZodiacInfoContext";
 import { FactsContext } from "../contexts/FactsContext";
 import Fact from "../components/Fact.tsx";
-import { getStore } from "../store";
 
 const ZodiacInfo = ({ sign }) => {
   const { zodiacInfoData, setZodiacInfoData } = useContext(ZodiacInfoContext);
@@ -43,15 +42,8 @@ const ZodiacInfo = ({ sign }) => {
   };
 
   useEffect(() => {
-    console.log("HEHE");
     fetchData();
   }, []);
-
-  useEffect(() => {
-    console.log("HAHA");
-    console.log(sign);
-    console.log(getStore());
-  });
 
   return (
     <div className="mx-auto container py-10 xl:px-40 flex justify-center flex-col">

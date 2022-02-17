@@ -1,24 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import ZodiacSelector from "./screens/ZodiacSelector";
 import ZodiacInfo from "./screens/ZodiacInfo.jsx";
 import { ZodiacSignContext } from "./contexts/ZodiacSignContext";
-import { getStore, setStore } from './store';
+import { setStore } from "./store";
 
 function App() {
-  const { sign } = getStore();
-   useContext(ZodiacSignContext);
+  const { sign } = useContext(ZodiacSignContext);
 
-   console.log(sign);
-  // console.log(getStore());
+  useEffect(() => {
+    setStore(sign);
+  }, [sign]);
 
   return (
     <Routes>
       <Route path="/" element={<ZodiacSelector />} />
-      <Route path={`info/${sign}`} element={<ZodiacInfo sign={sign} />} />
+      <Route path={`${sign}`} element={<ZodiacInfo sign={sign} />} />
     </Routes>
   );
 }
-
 export default App;
