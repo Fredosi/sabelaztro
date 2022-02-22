@@ -1,8 +1,4 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-
-import { ZodiacSignContext } from "../contexts/ZodiacSignContext";
-import { setStore } from "../store";
 
 type ZodiacSignProps = {
   name: string;
@@ -10,17 +6,10 @@ type ZodiacSignProps = {
 };
 
 const ZodiacSign = (props: ZodiacSignProps): React.ReactElement => {
-  const { setSign } = useContext(ZodiacSignContext);
-
-  const handleClick = () => {
-    setSign(() => props.name.toLowerCase());
-    setStore(props.name);
-  };
 
   return (
     <Link
       to={`/${props.name.toLowerCase()}`}
-      onClick={handleClick}
       className="bg-white text-center rounded-3xl border shadow-lg p-10 xl:p-8 max-w-xs m-1 cursor-pointer hover:bg-sky-100"
     >
       <img

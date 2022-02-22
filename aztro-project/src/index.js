@@ -5,18 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.js";
 import reportWebVitals from "./reportWebVitals";
-import ZodiacSignProvider from "./contexts/ZodiacSignContext";
 import ZodiacInfoProvider from "./contexts/ZodiacInfoContext";
-import FactsProvider from "./contexts/FactsContext";
 
 ReactDOM.render(
   <BrowserRouter>
     <ZodiacInfoProvider>
-      <ZodiacSignProvider>
-        <FactsProvider>
           <App />
-        </FactsProvider>
-      </ZodiacSignProvider>
     </ZodiacInfoProvider>
   </BrowserRouter>,
   document.getElementById("root")

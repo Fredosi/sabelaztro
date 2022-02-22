@@ -1,7 +1,6 @@
 type FactProps = {
   name: string;
   data: string;
-  image: string;
 };
 
 const Fact = ({ name, data }: FactProps): React.ReactElement => {
